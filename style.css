@@ -1,7 +1,14 @@
 /* ========================================================
-   SISTEMA DE DISEÑO BLUE | SIX-THEME ENGINE (RESPONSIVE)
+   SISTEMA DE DISEÑO BLUE | SIX-THEME ENGINE (UX REFINED)
    ======================================================== */
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Inter:wght@400;600;700&display=swap');
+
+/* SOLUCIÓN AL PROBLEMA DE NAVEGACIÓN */
+html {
+    scroll-behavior: smooth;
+    /* Ajustamos el espacio superior según el tamaño del menú */
+    scroll-padding-top: 100px; 
+}
 
 :root {
     --bg-main: #0a0a0a;
@@ -72,7 +79,7 @@ body {
 
 .hero-btns { display: flex; justify-content: center; gap: 1.5rem; }
 
-/* SECCIONES ZIGZAG (IMAGEN MÁS GRANDE) */
+/* SECCIONES ZIGZAG */
 .service-zone { padding: 10rem 0; }
 .service-zone.alt-bg { background-color: var(--bg-alt); }
 
@@ -135,51 +142,29 @@ footer { padding: 4rem 5%; text-align: center; background-color: var(--bg-main);
    DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
    ======================================================== */
 
-/* TABLETS GRANDES */
 @media (max-width: 1024px) {
+    html { scroll-padding-top: 180px; } /* Más espacio en tablet por menú apilado */
     .hero h1 { font-size: 3.8rem; }
     .zone-grid { gap: 3rem; }
     .text-side h2 { font-size: 2.5rem; white-space: normal; }
     .statement-area h2 { font-size: 2.5rem; }
-    .graphic-side { min-height: 350px; }
 }
 
-/* MÓVILES Y TABLETS PEQUEÑAS */
 @media (max-width: 768px) {
-    /* Navegación apilada */
+    html { scroll-padding-top: 220px; } /* Ajuste para móvil */
     .navbar { flex-direction: column; gap: 1.5rem; padding: 1.5rem 5%; }
     .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
     .nav-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
     .logo img { height: 60px; }
-
-    /* Hero */
     .hero { padding: 6rem 0 5rem; }
-    .hero h1 { font-size: 2.5rem; line-height: 1.2; }
-    .hero p { font-size: 1.1rem; margin-bottom: 2.5rem; }
+    .hero h1 { font-size: 2.5rem; }
     .hero-btns { flex-direction: column; width: 100%; padding: 0 1rem; }
     .hero-btns a { width: 100%; text-align: center; }
-
-    /* Secciones apiladas verticalmente */
     .service-zone { padding: 5rem 0; }
     .zone-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .zone-grid.reverse { direction: ltr; } /* Quita el zigzag para mantener el orden de lectura en móvil */
-    
+    .zone-grid.reverse { direction: ltr; }
     .text-side { text-align: center; }
     .text-side h2 { font-size: 2.2rem; }
-    .text-side h3.highlight { font-size: 1.2rem; }
-    
     .graphic-side { min-height: 250px; padding: 1.5rem; }
-    
-    /* Manifiesto */
-    .statement-area { padding: 6rem 5%; }
     .statement-area h2 { font-size: 1.8rem; }
-}
-
-/* MÓVILES PEQUEÑOS */
-@media (max-width: 480px) {
-    .logo img { height: 50px; }
-    .nav-links { gap: 1rem; font-size: 0.75rem; }
-    .hero h1 { font-size: 2.2rem; }
-    .text-side h2 { font-size: 1.8rem; }
-    .btn-primary, .nav-cta { padding: 1rem; font-size: 0.9rem; }
 }
