@@ -1,0 +1,127 @@
+/* ========================================================
+   SISTEMA DE DISEÑO BLUE | SIX-THEME ENGINE (FINAL SCALE)
+   ======================================================== */
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --bg-main: #0a0a0a;
+    --bg-alt: #111111;
+    --accent: #00e5ff;
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --font-primary: 'Inter', sans-serif;
+    --font-tech: 'PT Mono', monospace;
+}
+
+[data-theme="corporate"] {
+    --bg-main: #F8FAFC;
+    --bg-alt: #FFFFFF;
+    --accent: #055885; 
+    --text-main: #333333; 
+    --text-dim: #56606A; 
+    --card-bg: #B8D4E8; 
+    --border: rgba(5, 88, 133, 0.15);
+}
+
+/* Otros temas */
+[data-theme="hacker"] { --bg-main: #050505; --bg-alt: #0a0a0a; --accent: #00ff00; --text-main: #e0ffe0; --text-dim: #00aa00; --card-bg: rgba(0, 255, 0, 0.03); --border: rgba(0, 255, 0, 0.2); }
+[data-theme="ocean"] { --bg-main: #0a192f; --bg-alt: #112240; --accent: #64ffda; --text-main: #ccd6f6; --text-dim: #8892b0; --card-bg: #112240; --border: rgba(100, 255, 218, 0.1); }
+[data-theme="solar"] { --bg-main: #fdf6e3; --bg-alt: #eee8d5; --accent: #b58900; --text-main: #657b83; --text-dim: #93a1a1; --card-bg: rgba(0, 0, 0, 0.03); --border: rgba(181, 137, 0, 0.2); }
+[data-theme="monochrome"] { --bg-main: #ffffff; --bg-alt: #f5f5f5; --accent: #000000; --text-main: #000000; --text-dim: #555555; --card-bg: #e0e0e0; --border: #000000; }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-primary);
+    transition: background-color 0.4s, color 0.4s;
+    line-height: 1.7; 
+}
+
+/* ========================================================
+   ESTRUCTURA (MAXIMIZADA A 1440PX)
+   ======================================================== */
+.container { 
+    max-width: 1440px; 
+    margin: 0 auto; 
+    padding: 0 4%; 
+}
+
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 5%; position: sticky; top: 0; z-index: 1000;
+    background: var(--bg-main); border-bottom: 1px solid var(--border);
+}
+
+.logo { display: flex; align-items: center; }
+.logo img { height: 120px; transition: filter 0.3s; } 
+
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+/* HERO */
+.hero { padding: 14rem 0 10rem; text-align: center; }
+.hero h1 { font-size: 4.8rem; max-width: 1200px; margin: 0 auto 2rem; color: var(--accent); line-height: 1.1; }
+.hero p { max-width: 850px; margin: 0 auto 4rem; font-size: 1.35rem; color: var(--text-dim); }
+
+/* SECCIONES ZIGZAG (IMAGEN MÁS GRANDE) */
+.service-zone { padding: 10rem 0; }
+.service-zone.alt-bg { background-color: var(--bg-alt); }
+
+.zone-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Volvemos a 50/50 para dar más espacio a la imagen */
+    gap: 5rem; 
+    align-items: center; 
+}
+
+.zone-grid.reverse { direction: rtl; }
+.zone-grid.reverse > * { direction: ltr; }
+
+.text-side h2 { 
+    font-size: 3.1rem; 
+    margin-bottom: 0.5rem; 
+    white-space: nowrap; 
+}
+
+.text-side h3.highlight { font-size: 1.4rem; color: var(--accent); margin-bottom: 2rem; font-weight: 600; }
+.text-side p { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-dim); } 
+
+.graphic-side {
+    background: var(--card-bg); 
+    padding: 1rem; /* Padding mínimo para que la imagen sea masiva */
+    min-height: 450px; 
+    border-radius: 20px;
+    border: 1px solid var(--border); 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que el brillo se corte de forma fea */
+}
+
+.service-img {
+    width: 100%; /* La imagen ahora ocupa todo el ancho del div */
+    max-width: 600px; /* Pero limitamos para que no pierda calidad */
+    height: auto;
+}
+
+/* COMPONENTES */
+.btn-theme { background: transparent; color: var(--accent); border: 1px solid var(--accent); padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-family: var(--font-tech); font-size: 0.75rem; font-weight: bold; }
+.btn-primary, .nav-cta { background: var(--accent); color: var(--bg-main); padding: 1.1rem 2.2rem; text-decoration: none; border-radius: 4px; font-weight: 700; border: 1px solid var(--accent); }
+.nav-cta { padding: 0.7rem 1.4rem; font-size: 0.85rem; }
+
+/* ANIMACIONES */
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* MANIFIESTO */
+.statement-area { padding: 12rem 5%; background-color: var(--bg-alt); text-align: center; }
+.statement-area h2 { font-size: 3.2rem; font-weight: 700; color: var(--accent); line-height: 1.2; font-style: italic; max-width: 1100px; margin: 0 auto 2rem; }
+.statement-line { display: block; width: 80px; height: 3px; background-color: var(--accent); margin: 0 auto; }
+
+/* FOOTER */
+footer { padding: 4rem 5%; text-align: center; background-color: var(--bg-main); border-top: 1px solid var(--border); }
+.footer-bottom p { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }

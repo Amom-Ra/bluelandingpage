@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="corporate">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUE | Ingeniería de Software Premium</title>
+    
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/Full Color HORIZONTAL.svg" alt="BLUE Logo" id="mainLogo" style="filter: none;">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#desarrollo">Desarrollo</a></li>
+            <li><a href="#infraestructura">Infraestructura</a></li>
+            <li><a href="#automatizacion">Automatización</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="themeSwitcher" class="btn-theme">
+                <span class="theme-label">Corporate Blue</span>
+            </button>
+            <a href="https://wa.me/573002565085" target="_blank" class="nav-cta">Contáctanos</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="tagline">Estrategia & Arquitectura</span>
+                    <h1>Ingeniería a otro nivel.</h1>
+                    <p>Transformamos requerimientos complejos en productos web funcionales, probados y documentados.</p>
+                    <div class="hero-btns">
+                        <a href="https://wa.me/573002565085" target="_blank" class="btn-primary">Iniciar Proyecto</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="desarrollo" class="service-zone fade-in">
+            <div class="container">
+                <div class="zone-grid">
+                    <div class="text-side">
+                        <h2>Desarrollo de Software</h2>
+                        <h3 class="highlight">Arquitecturas limpias y código escalable.</h3>
+                        <p>En BLUE, entendemos que el desarrollo de software no es solo escribir líneas de código, sino construir los cimientos de tu éxito digital. Aplicamos metodologías ágiles y arquitecturas limpias para garantizar que cada producto sea robusto y escalable.</p>
+                        <p>Nuestro equipo se especializa en convertir requerimientos de negocio complejos en interfaces intuitivas y sistemas de alto rendimiento.</p>
+                    </div>
+                    <div class="graphic-side">
+                        <svg class="service-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            <rect width="400" height="300" rx="24" fill="currentColor" fill-opacity="0.04"/>
+                            <g transform="translate(200, 150) scale(1.8)" stroke="var(--accent)" stroke-width="1.2" filter="url(#glow)" fill="none">
+                                <path d="M0 -80 L56.5 -56.5 L80 0 L56.5 56.5 L0 80 L-56.5 56.5 L-80 0 L-56.5 -56.5 Z" opacity="0.3"/>
+                                <path d="M0 -40 L28.2 -28.2 L40 0 L28.2 28.2 L0 40 L-28.2 28.2 L-40 0 L-28.2 -28.2 Z" opacity="0.6"/>
+                                <line x1="0" y1="-80" x2="0" y2="80" /><line x1="-80" y1="0" x2="80" y2="0" />
+                                <line x1="-56.5" y1="-56.5" x2="56.5" y2="56.5" /><line x1="-56.5" y1="56.5" x2="56.5" y2="-56.5" />
+                                <circle cx="0" cy="0" r="10" fill="var(--accent)"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="infraestructura" class="service-zone alt-bg fade-in">
+            <div class="container">
+                <div class="zone-grid reverse">
+                    <div class="text-side">
+                        <h2>Infraestructura Cloud</h2>
+                        <h3 class="highlight">Disponibilidad total y seguridad.</h3>
+                        <p>Diseñamos y gestionamos infraestructuras cloud para entornos de misión crítica donde la disponibilidad no es negociable. Nuestra arquitectura se basa en principios de redundancia global.</p>
+                        <p>Optimizamos el consumo de recursos mediante configuraciones nativas de la nube, asegurando eficiencia y rendimiento extremo.</p>
+                    </div>
+                    <div class="graphic-side">
+                        <svg class="service-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" rx="24" fill="currentColor" fill-opacity="0.04"/>
+                            <g transform="translate(200, 150) scale(1.4)" stroke="var(--accent)" stroke-width="1.2" filter="url(#glow)" fill="none">
+                                <rect x="-80" y="-80" width="160" height="160" rx="10" stroke-dasharray="10 5" opacity="0.3"/>
+                                <g opacity="0.8">
+                                    <rect x="-30" y="-30" width="60" height="60" rx="4" fill="var(--accent)" fill-opacity="0.1"/>
+                                    <path d="M0 -30 V-100 M-30 0 H-100 M30 0 H100 M0 30 V100" opacity="0.5"/>
+                                    <circle cx="-100" cy="0" r="8"/><circle cx="100" cy="0" r="8"/>
+                                    <circle cx="0" cy="-100" r="8"/><circle cx="0" cy="100" r="8"/>
+                                </g>
+                                <circle cx="0" cy="0" r="15" fill="var(--accent)"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="automatizacion" class="service-zone fade-in">
+            <div class="container">
+                <div class="zone-grid">
+                    <div class="text-side">
+                        <h2>Automatización</h2>
+                        <h3 class="highlight">Eficiencia mediante procesos inteligentes.</h3>
+                        <p>La automatización es el motor que impulsa la eficiencia operativa, eliminando tareas repetitivas y errores manuales.</p>
+                        <p>Implementamos flujos de trabajo inteligentes que conectan tus herramientas para crear procesos autónomos y rápidos.</p>
+                    </div>
+                    <div class="graphic-side">
+                        <svg class="service-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" rx="24" fill="currentColor" fill-opacity="0.04"/>
+                            <g transform="translate(200, 150) scale(1.5)" stroke="var(--accent)" stroke-width="1.2" filter="url(#glow)" fill="none">
+                                <circle cx="0" cy="0" r="80" stroke-dasharray="15 8" opacity="0.2"/>
+                                <path d="M-90 0 A90 90 0 0 1 90 0" opacity="0.4"/>
+                                <path d="M-90 0 A90 90 0 0 0 90 0" opacity="0.4"/>
+                                <circle cx="-90" cy="0" r="6" fill="var(--accent)"/>
+                                <circle cx="90" cy="0" r="6" fill="var(--accent)"/>
+                                <circle cx="0" cy="0" r="12" fill="var(--accent)"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statement-area fade-in">
+            <div class="container">
+                <div class="statement-quote">
+                    <h2>"No somos soporte técnico. Somos su socio estratégico."</h2>
+                    <span class="statement-line"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="footer-bottom">
+            <p>&copy; 2026 BLUE. Built for Performance.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
