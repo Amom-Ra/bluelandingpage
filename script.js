@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 1. GESTIÓN DE TEMAS (SONARQUBE COMPLIANT)
     // ==========================================
-    const themes = ['dark', 'corporate', 'hacker', 'ocean', 'solar', 'monochrome'];
+    const themes = ['dark', 'corporate', /*'hacker', */  'ocean',/* 'solar',*/ 'monochrome'];
     const labels = { 
         dark: 'Dark Tech', 
         corporate: 'Corporate Blue', // El tema oficial del manual
-        hacker: 'Terminal Green',
+        // hacker: 'Terminal Green',
         ocean: 'Deep Ocean', 
-        solar: 'Solar Light', 
+        // solar: 'Solar Light', 
         monochrome: 'Monochrome'
     };
     
