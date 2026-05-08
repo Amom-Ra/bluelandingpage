@@ -121,18 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 // 4. EFECTO DINÁMICO EN EL NAVBAR (SCROLL)
 // ==========================================
-// Queda fuera del DOMContentLoaded para inicializarse más rápido
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (navbar) {
+        // En lugar de inyectar estilos directos que hacen temblar la pantalla, 
+        // solo encendemos o apagamos una clase CSS.
         if (window.scrollY > 80) {
-            navbar.style.padding = '0.8rem 5%';
-            // Validar si el tema es claro u oscuro para la sombra podría ser un buen detalle, 
-            // pero mantenemos tu sombra original:
-            navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)'; 
+            navbar.classList.add('scrolled');
         } else {
-            navbar.style.padding = '1.5rem 5%';
-            navbar.style.boxShadow = 'none';
+            navbar.classList.remove('scrolled');
         }
     }
 });
