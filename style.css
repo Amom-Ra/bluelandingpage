@@ -1,5 +1,5 @@
 /* ========================================================
-   SISTEMA DE DISEÑO BLUE | SIX-THEME ENGINE (FINAL SCALE)
+   SISTEMA DE DISEÑO BLUE | SIX-THEME ENGINE (RESPONSIVE)
    ======================================================== */
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Inter:wght@400;600;700&display=swap');
 
@@ -39,6 +39,7 @@ body {
     font-family: var(--font-primary);
     transition: background-color 0.4s, color 0.4s;
     line-height: 1.7; 
+    overflow-x: hidden;
 }
 
 /* ========================================================
@@ -57,15 +58,19 @@ body {
 }
 
 .logo { display: flex; align-items: center; }
-.logo img { height: 120px; transition: filter 0.3s; } 
+.logo img { height: 80px; transition: filter 0.3s; }
 
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+
+.nav-actions { display: flex; align-items: center; gap: 1.5rem; }
 
 /* HERO */
 .hero { padding: 14rem 0 10rem; text-align: center; }
 .hero h1 { font-size: 4.8rem; max-width: 1200px; margin: 0 auto 2rem; color: var(--accent); line-height: 1.1; }
 .hero p { max-width: 850px; margin: 0 auto 4rem; font-size: 1.35rem; color: var(--text-dim); }
+
+.hero-btns { display: flex; justify-content: center; gap: 1.5rem; }
 
 /* SECCIONES ZIGZAG (IMAGEN MÁS GRANDE) */
 .service-zone { padding: 10rem 0; }
@@ -73,7 +78,7 @@ body {
 
 .zone-grid { 
     display: grid; 
-    grid-template-columns: 1fr 1fr; /* Volvemos a 50/50 para dar más espacio a la imagen */
+    grid-template-columns: 1fr 1fr; 
     gap: 5rem; 
     align-items: center; 
 }
@@ -92,19 +97,19 @@ body {
 
 .graphic-side {
     background: var(--card-bg); 
-    padding: 1rem; /* Padding mínimo para que la imagen sea masiva */
+    padding: 1rem; 
     min-height: 450px; 
     border-radius: 20px;
     border: 1px solid var(--border); 
     display: flex; 
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Evita que el brillo se corte de forma fea */
+    overflow: hidden; 
 }
 
 .service-img {
-    width: 100%; /* La imagen ahora ocupa todo el ancho del div */
-    max-width: 600px; /* Pero limitamos para que no pierda calidad */
+    width: 100%; 
+    max-width: 600px; 
     height: auto;
 }
 
@@ -125,3 +130,56 @@ body {
 /* FOOTER */
 footer { padding: 4rem 5%; text-align: center; background-color: var(--bg-main); border-top: 1px solid var(--border); }
 .footer-bottom p { color: var(--text-dim); font-size: 0.95rem; font-weight: 500; }
+
+/* ========================================================
+   DISEÑO RESPONSIVE (MÓVILES Y TABLETS)
+   ======================================================== */
+
+/* TABLETS GRANDES */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 3.8rem; }
+    .zone-grid { gap: 3rem; }
+    .text-side h2 { font-size: 2.5rem; white-space: normal; }
+    .statement-area h2 { font-size: 2.5rem; }
+    .graphic-side { min-height: 350px; }
+}
+
+/* MÓVILES Y TABLETS PEQUEÑAS */
+@media (max-width: 768px) {
+    /* Navegación apilada */
+    .navbar { flex-direction: column; gap: 1.5rem; padding: 1.5rem 5%; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    .nav-actions { width: 100%; justify-content: center; flex-wrap: wrap; }
+    .logo img { height: 60px; }
+
+    /* Hero */
+    .hero { padding: 6rem 0 5rem; }
+    .hero h1 { font-size: 2.5rem; line-height: 1.2; }
+    .hero p { font-size: 1.1rem; margin-bottom: 2.5rem; }
+    .hero-btns { flex-direction: column; width: 100%; padding: 0 1rem; }
+    .hero-btns a { width: 100%; text-align: center; }
+
+    /* Secciones apiladas verticalmente */
+    .service-zone { padding: 5rem 0; }
+    .zone-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .zone-grid.reverse { direction: ltr; } /* Quita el zigzag para mantener el orden de lectura en móvil */
+    
+    .text-side { text-align: center; }
+    .text-side h2 { font-size: 2.2rem; }
+    .text-side h3.highlight { font-size: 1.2rem; }
+    
+    .graphic-side { min-height: 250px; padding: 1.5rem; }
+    
+    /* Manifiesto */
+    .statement-area { padding: 6rem 5%; }
+    .statement-area h2 { font-size: 1.8rem; }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+    .logo img { height: 50px; }
+    .nav-links { gap: 1rem; font-size: 0.75rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .text-side h2 { font-size: 1.8rem; }
+    .btn-primary, .nav-cta { padding: 1rem; font-size: 0.9rem; }
+}
