@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const htmlElement = document.documentElement;
-    const themeBtn = document.getElementById('themeSwitcher'); // Asegúrate de que el botón en HTML tenga id="themeSwitcher"
+    const themeBtn = document.getElementById('themeSwitcher'); 
     const logo = document.getElementById('mainLogo');
 
     // Recuperar el tema guardado o usar 'dark' por defecto
